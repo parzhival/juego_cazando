@@ -29,10 +29,12 @@ function graficarGato(){
 function limpiarCanva(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 }
-
+function actualizarPantalla(){
+    limpiarCanva();
+    graficarComida();
+    graficarGato();
+}
 function moverIzquierda(){
     gatoX=gatoX-10
-    limpiarCanva();
-    graficarGato();
-    graficarComida();
+    actualizarPantalla();
 }
