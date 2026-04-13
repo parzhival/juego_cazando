@@ -87,9 +87,8 @@ function restarTiempo(){
         alert("GAME OVER")
     }
 }
-function detenerTiempo(){
-    clearInterval(velocidad);
-}
+
+
 function reiniciarJuego(){
     puntaje = 0;
     tiempo = 10;
