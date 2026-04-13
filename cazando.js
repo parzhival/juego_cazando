@@ -6,6 +6,7 @@ let comidaX = 460;
 let comidaY = 460;
 let puntaje = 0;
 let tiempo = 10;
+let velocidad;
 
 const ALTO_GATO = 40;
 const ANCHO_GATO = 60;
@@ -13,9 +14,10 @@ const ALTO_COMIDA = 40;
 const ANCHO_COMIDA = 40;
 
 function iniciarJuego(){
-    setInterval(restarTiempo,1000);
+    velocidad=setInterval(restarTiempo,1000);
     graficarGato();
     graficarComida();
+      
 }
 function graficarRectangulo(x,y,ancho,alto,color){
     ctx.fillStyle = color ;
@@ -36,6 +38,10 @@ function actualizarPantalla(){
     limpiarCanva();
     graficarComida();
     graficarGato();
+    if(puntaje==6){
+        clearInterval(velocidad);
+        alert("ganador")
+    }
 }
 function moverIzquierda(){
     gatoX=gatoX-10;
@@ -75,4 +81,20 @@ function aparecerComida(){
 function restarTiempo(){
     tiempo = tiempo-1;
     mostrarEnSpan("tiempo",tiempo);
+    if(tiempo==0){
+        clearInterval(velocidad);
+        alert("GAME OVER")
+    }
 }
+function detenerTiempo(){
+    clearInterval(velocidad);
+}
+function reiniciarJuego(){
+    puntaje = 0;
+    tiempo = 10;
+    mostrarEnSpan("puntos",puntaje);
+    mostrarEnSpan("tiempo",tiempo);
+    iniciarJuego();
+    actualizarPantalla();
+}
+    
