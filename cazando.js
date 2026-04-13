@@ -14,6 +14,7 @@ const ALTO_COMIDA = 40;
 const ANCHO_COMIDA = 40;
 
 function iniciarJuego(){
+    clearInterval(velocidad);
     velocidad=setInterval(restarTiempo,1000);
     graficarGato();
     graficarComida();
@@ -39,10 +40,7 @@ function actualizarPantalla(){
     limpiarCanva();
     graficarComida();
     graficarGato();
-    if(puntaje==6){
-        clearInterval(velocidad);
-        alert("ganador")
-    }
+    
 }
 function moverIzquierda(){
     gatoX=gatoX-10;
@@ -73,6 +71,10 @@ function detectarColision(){
         puntaje=puntaje+1;
         mostrarEnSpan("puntos",puntaje);
     }
+    if(puntaje==6){
+        clearInterval(velocidad);
+        alert("ganador")
+    }
 }
 function aparecerComida(){
     comidaX=generarAleatorio(0,canvas.width-ANCHO_COMIDA);
@@ -88,7 +90,6 @@ function restarTiempo(){
     }
 }
 
-
 function reiniciarJuego(){
     puntaje = 0;
     tiempo = 10;
@@ -100,5 +101,6 @@ function reiniciarJuego(){
     mostrarEnSpan("tiempo",tiempo);
     actualizarPantalla();
     iniciarJuego();
+    
 }
     
