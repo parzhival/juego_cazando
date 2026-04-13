@@ -17,7 +17,8 @@ function iniciarJuego(){
     velocidad=setInterval(restarTiempo,1000);
     graficarGato();
     graficarComida();
-      
+    
+    
 }
 function graficarRectangulo(x,y,ancho,alto,color){
     ctx.fillStyle = color ;
@@ -92,9 +93,13 @@ function detenerTiempo(){
 function reiniciarJuego(){
     puntaje = 0;
     tiempo = 10;
+    gatoX = 220;
+    gatoY = 230;
+    comidaX = 460;
+    comidaY = 460;
     mostrarEnSpan("puntos",puntaje);
     mostrarEnSpan("tiempo",tiempo);
-    iniciarJuego();
     actualizarPantalla();
+    iniciarJuego();
 }
     
