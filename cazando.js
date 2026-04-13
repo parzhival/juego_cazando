@@ -33,6 +33,7 @@ function actualizarPantalla(){
     limpiarCanva();
     graficarComida();
     graficarGato();
+    detectarColision();
 }
 function moverIzquierda(){
     gatoX=gatoX-10;
@@ -49,4 +50,12 @@ function moverArriba(){
 function moverAbajo(){
     gatoY=gatoY+10;
     actualizarPantalla();
+}
+function detectarColision(){
+    if(gatoX+ANCHO_GATO >= comidaX && 
+        gatoX <= comidaX+ANCHO_COMIDA &&
+        gatoY+ALTO_GATO >= comidaY &&
+        gatoY <= comidaY+ALTO_COMIDA){
+        alert("ÑAM ÑAM")    
+    }
 }
