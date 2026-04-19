@@ -1,0 +1,5 @@
+prompt #1
+actua como un diseñador grafico y cambia la interfaz visual de este videojuego como el estilo de botones, sus colores a tipos neon, el borde del canva, no cambies los ids de los componentes y manten separados el archivo css y el archivo HTML.
+
+prompt #2
+me agradan mucho los cambios, sin embargo necesito que los botones esten centrados por debajo del canva mantiendo los estilos ya implementados

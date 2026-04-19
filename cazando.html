@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Juego Cazando</title>
+  <meta charset="UTF-8">
+  <title>Juego Cazando - Edición Neón</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="cazando.css"/>
   <script src="utils.js"></script>
 </head>
@@ -9,17 +11,25 @@
    
   <h1>Juego Cazando</h1>
   <p>Autor: PARZHIVAL</p>
+  
   <canvas id="areaJuego" width="500" height="500"></canvas>
 
-  <div class="controles">
-    <button onclick="moverArriba();">⬆</button>
-    <br>
-    <button onclick="moverIzquierda();">⬅</button>
-    <button onclick="moverAbajo();">⬇</button>
-    <button onclick="moverDerecha();">➡</button>
-    
+  <div class="interfaz-controles">
+    <div class="controles">
+      <div class="fila">
+        <button onclick="moverArriba();">⬆</button>
+      </div>
+      <div class="fila">
+        <button onclick="moverIzquierda();">⬅</button>
+        <button onclick="moverAbajo();">⬇</button>
+        <button onclick="moverDerecha();">➡</button>
+      </div>
+    </div>
+
+    <div class="seccion-reinicio">
+      <button onclick="reiniciarJuego();">REINICIAR</button>
+    </div>
   </div>
-  <button onclick="reiniciarJuego();">REINICIAR</button>
 
   <div class="panel">
     <span>Puntos: <span id="puntos">0</span></span>
@@ -31,5 +41,3 @@
   <script src="cazando.js"></script>
 </body>
 </html>
-//fin codigo
-//prueba cambios branch

@@ -5,7 +5,7 @@ let gatoY = 230;
 let comidaX = 460;
 let comidaY = 460;
 let puntaje = 0;
-let tiempo = 10;
+let tiempo = 30;
 let velocidad;
 
 const ALTO_GATO = 40;
@@ -92,7 +92,7 @@ function restarTiempo(){
 
 function reiniciarJuego(){
     puntaje = 0;
-    tiempo = 10;
+    tiempo = 30;
     gatoX = 220;
     gatoY = 230;
     comidaX = 460;
