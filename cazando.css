@@ -1,127 +1,147 @@
 body {
   text-align: center;
   font-family: 'Orbitron', sans-serif;
-  /* Configuración del fondo con la imagen arcade.png */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('arcade.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('arcade.png');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  background-repeat: no-repeat;
-  
   min-height: 100vh;
   margin: 0;
-  padding: 20px;
+  padding: 10px;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
 }
 
 h1 {
-  margin-bottom: 5px;
+  margin: 10px 0 5px 0;
   color: #0ff;
-  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
-  font-size: 2.5em;
+  text-shadow: 0 0 10px #0ff;
+  font-size: clamp(1.5em, 8vw, 2.5em); /* Tamaño de fuente adaptable */
   text-transform: uppercase;
 }
 
+.autor {
+  font-size: 0.8em;
+  margin-bottom: 10px;
+  opacity: 0.7;
+}
+
+/* Contenedor para manejar el tamaño del canvas */
+.contenedor-juego {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
 canvas {
-  background-color: rgba(17, 17, 17, 0.85); /* Un poco más traslúcido */
+  background-color: rgba(17, 17, 17, 0.8);
   border: 3px solid #0ff;
   border-radius: 10px;
-  box-shadow: 0 0 20px #0ff, inset 0 0 15px #0ff;
-  margin: 15px 0;
-  backdrop-filter: blur(2px); /* Efecto cristal para el canvas */
+  box-shadow: 0 0 20px #0ff;
+  width: 100% !important; /* El canvas se adapta al contenedor */
+  height: auto !important; /* Mantiene la proporción */
+  backdrop-filter: blur(2px);
 }
 
 .interfaz-controles {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap; /* Permite que los elementos se acomoden en pantallas pequeñas */
+  justify-content: center;
   align-items: center;
-  margin-top: 10px;
   gap: 15px;
+  margin-top: 15px;
+  width: 100%;
 }
 
 .controles {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para los botones */
-  padding: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px;
   border-radius: 15px;
   backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
 }
 
 .fila {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 8px;
 }
 
-/* Botones Neón ajustados para resaltar sobre la imagen */
 button {
-  padding: 12px 22px;
-  font-size: 18px;
+  padding: clamp(10px, 4vw, 15px) clamp(15px, 5vw, 25px);
+  font-size: clamp(16px, 4vw, 20px);
   cursor: pointer;
   background: rgba(0, 0, 0, 0.6);
   color: #39ff14;
   border: 2px solid #39ff14;
   border-radius: 8px;
   font-family: 'Orbitron', sans-serif;
-  font-weight: bold;
   transition: all 0.2s ease;
-  box-shadow: 0 0 10px #39ff14;
-  text-shadow: 0 0 5px #39ff14;
+  box-shadow: 0 0 8px #39ff14;
 }
 
 button:hover {
   background: #39ff14;
   color: #000;
-  box-shadow: 0 0 25px #39ff14;
-  transform: translateY(-3px);
+  box-shadow: 0 0 20px #39ff14;
 }
 
 .seccion-reinicio button {
   color: #ff003c;
   border-color: #ff003c;
-  box-shadow: 0 0 10px #ff003c;
-  text-shadow: 0 0 5px #ff003c;
+  box-shadow: 0 0 8px #ff003c;
 }
 
 .seccion-reinicio button:hover {
   background: #ff003c;
   color: #fff;
-  box-shadow: 0 0 25px #ff003c;
 }
 
 .panel {
-  margin: 20px 0;
-  font-size: 18px;
+  margin: 15px 0;
+  font-size: clamp(14px, 4vw, 18px);
   display: flex;
-  gap: 30px;
-  background: rgba(0, 0, 0, 0.7);
-  padding: 12px 40px;
-  border-radius: 10px;
+  gap: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px 25px;
+  border-radius: 8px;
   border: 2px solid #f0f;
   box-shadow: 0 0 15px #f0f;
-  backdrop-filter: blur(10px); /* Hace que el fondo de la imagen no distraiga */
+  backdrop-filter: blur(10px);
 }
 
 #puntos, #tiempo {
   color: #f0f;
-  text-shadow: 0 0 8px #f0f;
+  text-shadow: 0 0 5px #f0f;
 }
 
 #mensaje {
-  font-size: 20px;
-  min-height: 30px;
-  margin-top: 10px;
-  padding: 10px 25px;
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(5px);
+  font-size: 18px;
+  padding: 10px;
+  min-height: 25px;
 }
 
-#mensaje.exito { border: 2px solid #39ff14; color: #39ff14; box-shadow: 0 0 15px #39ff14; }
-#mensaje.error { border: 2px solid #ff003c; color: #ff003c; box-shadow: 0 0 15px #ff003c; }
+/* --- AJUSTES ESPECÍFICOS PARA MÓVILES PEQUEÑOS --- */
+@media (max-width: 480px) {
+  body {
+    padding: 5px;
+  }
+  
+  .interfaz-controles {
+    flex-direction: column; /* Apila controles y botón reiniciar */
+  }
+
+  .panel {
+    width: 90%;
+    justify-content: space-around;
+    box-sizing: border-box;
+  }
+
+  /* Hacemos los botones un poco más grandes para que sean fáciles de tocar */
+  button {
+    min-width: 60px;
+    }
+}

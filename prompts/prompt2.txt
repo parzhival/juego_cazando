@@ -1,0 +1,5 @@
+prompt#1
+esta vez necesito que agregues esta imagen como fondo principal de la pagina, manteniendo todos los cambios anteriores en el código
+
+prompt#2
+ahora necesito en el mismo codigo manteniendo todo lo anterior ya modificado, quiero que agregues o realices el responsive mobile para que se alinee todo el formato para distintas visualizaciones en distintos dispositivos como pc, celulares y tablets

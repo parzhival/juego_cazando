@@ -2,7 +2,8 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Juego Cazando - Edición Neón</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego Cazando - Edición Multiplataforma</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="cazando.css"/>
   <script src="utils.js"></script>
@@ -10,9 +11,11 @@
 <body onload="iniciarJuego();">
    
   <h1>Juego Cazando</h1>
-  <p>Autor: PARZHIVAL</p>
+  <p class="autor">Autor: PARZHIVAL</p>
   
-  <canvas id="areaJuego" width="500" height="500"></canvas>
+  <div class="contenedor-juego">
+    <canvas id="areaJuego" width="500" height="500"></canvas>
+  </div>
 
   <div class="interfaz-controles">
     <div class="controles">
