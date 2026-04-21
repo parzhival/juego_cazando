@@ -70,6 +70,7 @@ function detectarColision(){
         aparecerComida();  
         puntaje=puntaje+1;
         mostrarEnSpan("puntos",puntaje);
+        tiempo = 15;
     }
     if(puntaje==6){
         clearInterval(velocidad);
