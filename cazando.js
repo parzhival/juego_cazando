@@ -7,20 +7,23 @@ let comidaY = 460;
 let puntaje = 0;
 let tiempo = 15;
 let velocidad;
+let imagenGato = new Image();
+imagenGato.src = "gato.png";
 
-const ALTO_GATO = 40;
+
+const ALTO_GATO = 60;
 const ANCHO_GATO = 60;
 const ALTO_COMIDA = 40;
 const ANCHO_COMIDA = 40;
 
 function iniciarJuego(){
-    clearInterval(velocidad);
-    velocidad=setInterval(restarTiempo,1000);
-    graficarGato();
-    graficarComida();
+     clearInterval(velocidad);
+    velocidad = setInterval(restarTiempo, 1000);
+    actualizarPantalla();
+    }
     
     
-}
+
 function graficarRectangulo(x,y,ancho,alto,color){
     ctx.fillStyle = color ;
     ctx.fillRect(x,y,ancho,alto);
@@ -30,7 +33,12 @@ function graficarComida(){
 } 
 
 function graficarGato(){
-    graficarRectangulo(gatoX,gatoY,ANCHO_GATO,ALTO_GATO,"#ec3609");
+      if (imagenGato.complete) {
+        ctx.drawImage(imagenGato, gatoX, gatoY, ANCHO_GATO, ALTO_GATO);
+    } else {
+        // Mientras carga, dibuja un rectángulo temporal
+        graficarRectangulo(gatoX, gatoY, ANCHO_GATO, ALTO_GATO, "#ec3609");
+    }
  }
 
 function limpiarCanva(){
